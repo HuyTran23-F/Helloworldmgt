@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aht" translate="label" sortOrder="10">
+            <label>AHT</label>
+        </tab>
+        <section id="setting" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>aht-setting</class>
+            <label>Setting</label>
+            <tab>aht</tab>
+            <resource>AHT_HelloWorld::Configuration</resource>
+            <group id="post" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Source Model </label>
+                <field id="color" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <source_model>AHT\HelloWorld\Model\Config\Source\Color</source_model>
+                    <comment>Select colors</comment>
+                </field>
+                <field id="language" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Language</label>
+                    <source_model>AHT\HelloWorld\Model\Config\Source\Language</source_model>
+                    <comment>Select Language </comment>
+                </field>
+                <!-- Color -->
+                <field id="color_fe" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>AHT\HelloWorld\Block\Color</frontend_model>
+                </field>
+                <!-- Thong ke -->
+                <field id="report" translate="label" sortOrder="5" showInDefault="1">
+                    <label>THong ke</label>
+                    <frontend_model>AHT\HelloWorld\Block\Dynamic</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+
+                <!-- Back end Model -->
+                <field id="custom_backend_model" 
+                    translate="label" 
+                    type="text" 
+                    sortOrder="1" 
+                    showInDefault="1" 
+                    showInWebsite="1" 
+                    showInStore="1">
+                    <label>Backend model </label>
+                    <backend_model>AHT\HelloWorld\Model\Config\Backend\Validate</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,26 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!-- Plugin -->
+    <type name="AHT\HelloWorld\Controller\Index\Index">
+        <plugin name="AHT_HelloWorld_Plugin" type="AHT\HelloWorld\Plugin\ExamplePlugin" sortOrder="10" disabled="false" />
+    </type>
+
+    <!-- <type name="Magento\Catalog\Model\Product">
+        <plugin name="aht_helloworld_update_product_name" type="AHT\HelloWorld\Plugin\UpdateProductName" />
+    </type> -->
+
+    <!-- UiComponent -->
+    <virtualType name="AHT\HelloWorld\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">helloworld_post</argument>
+            <argument name="resourceModel" xsi:type="string">AHT\HelloWorld\Model\ResourceModel\Post\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="helloworld_post_listing_data_source" xsi:type="string">AHT\HelloWorld\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+</config>

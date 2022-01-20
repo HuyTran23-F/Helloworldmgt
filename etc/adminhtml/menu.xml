@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add 
+            id="AHT_HelloWorld::aht_menu" 
+            title="AHT Listing" 
+            module="AHT_HelloWorld" 
+            sortOrder="41" 
+            resource="AHT_HelloWorld::menu"
+        />
+
+        <add 
+            id="AHT_HelloWorld::parent" 
+            title="AHT Post" 
+            module="AHT_HelloWorld" 
+            sortOrder="10" 
+            resource="AHT_HelloWorld::menu" 
+            parent="AHT_HelloWorld::aht_menu"
+        />
+
+        <add 
+            id="AHT_HelloWorld::post" 
+            title="Manage Posts" 
+            module="AHT_HelloWorld" 
+            sortOrder="10" 
+            action="helloworld/post/index" 
+            resource="AHT_HelloWorld::post" 
+            parent="AHT_HelloWorld::parent"
+        />
+    </menu>
+</config>
